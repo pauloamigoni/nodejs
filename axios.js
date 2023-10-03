@@ -11,19 +11,20 @@ const apiKey = process.env.TEMPO_KEY;
 // Cidade e país para a consulta
 const cidade = 'Limeira';
 const pais = 'BR';
-
-// URL da API do OpenWeatherMap
+// URL da API de previsão do tempo
 const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${cidade},${pais}&appid=${apiKey}`;
 
-// Usando o Axios para fazer a solicitação GET à API do OpenWeatherMap
+// Usando o Axios para fazer a solicitação GET à API de previsão do tempo
 axios.get(apiUrl)
     .then(response => {
         const dadosDoTempo = response.data;
-        console.log(`Chef: Verificando a previsão do tempo para ${cidade}, Brasil...`);
-        console.log(`Chef: Condição atual: ${dadosDoTempo.weather[0].description}`);
-        console.log(`Chef: Temperatura atual: ${(dadosDoTempo.main.temp - 273.15).toFixed(1)}°C`);
-        console.log(`Chef: Umidade: ${dadosDoTempo.main.humidity}%`);
-        console.log(`Chef: Velocidade do vento: ${dadosDoTempo.wind.speed} m/s`);
+        const descricaoDoTempo = dadosDoTempo.weather[0].description;
+        const temperatura = (dadosDoTempo.main.temp - 273.15).toFixed(1);
+        console.log('Chef: Verificando a previsão do tempo para a inauguração do "Node Café"...');
+        console.log(`Chef: Previsão: ${descricaoDoTempo}`);
+        console.log(`Chef: Temperatura: ${temperatura}°C`);
+        console.log('Chef: Parece que teremos um dia maravilhoso para a inauguração!');
+        console.log('Chef: Venha ao "Node Café" e desfrute de nossas deliciosas refeições!');
     })
     .catch(error => {
         console.error('Chef: Desculpe, algo deu errado ao buscar informações de previsão do tempo:', error.message);
