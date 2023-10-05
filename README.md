@@ -12,4 +12,4 @@ Somos um restaurante virtual único que mistura a magia da programação com a d
 **Clone o Repositório:** Clone este repositório para sua máquina local.
 
 ```bash
-git clone https://github.com/pauloamigoni/restaurante-node-cafe.git
+git clone https://github.com/pauloamigoni/nodejs.git
