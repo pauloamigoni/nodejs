@@ -1,8 +1,6 @@
 // No arquivo index.js
 
 const axios = require('axios');
-//deve ser instalado o dotenv
-// npm install dotenv
 require('dotenv').config();
 
 // Chave de acesso à API do OpenWeatherMap (você precisa obter uma chave no site do OpenWeatherMap)
